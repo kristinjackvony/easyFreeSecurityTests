@@ -1,0 +1,734 @@
+{
+	"info": {
+		"_postman_id": "d1253a7f-3352-44be-a981-863c3bde0091",
+		"name": "Easy Free Security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Token Empty Username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dbbf3a3f-ced6-46d6-8786-2834d97491f2",
+						"exec": [
+							"pm.test(\"Bad credential message returned\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"\",\n    \"password\" : \"password123\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Token Invalid Username",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dbbf3a3f-ced6-46d6-8786-2834d97491f2",
+						"exec": [
+							"pm.test(\"Bad credential message returned\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"foobar\",\n    \"password\" : \"password123\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Token Empty Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dbbf3a3f-ced6-46d6-8786-2834d97491f2",
+						"exec": [
+							"pm.test(\"Bad credential message returned\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"foobar\",\n    \"password\" : \"\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Token Invalid Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dbbf3a3f-ced6-46d6-8786-2834d97491f2",
+						"exec": [
+							"pm.test(\"Bad credential message returned\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"foobar\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Token Empty Username and Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dbbf3a3f-ced6-46d6-8786-2834d97491f2",
+						"exec": [
+							"pm.test(\"Bad credential message returned\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"\",\n    \"password\" : \"\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Token Invalid Username and Password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dbbf3a3f-ced6-46d6-8786-2834d97491f2",
+						"exec": [
+							"pm.test(\"Bad credential message returned\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Bad credentials\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"foo\",\n    \"password\" : \"bar\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/auth",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Booking No Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5cdd3231-46d6-44a6-af0e-02e430b6ff11",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Joe\",\n    \"lastname\" : \"Schmoe\",\n    \"totalprice\" : 112,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2019-01-08\",\n        \"checkout\" : \"2019-01-10\"\n    },\n    \"additionalneeds\" : \"Lunch\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/1",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Booking Invalid Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5cdd3231-46d6-44a6-af0e-02e430b6ff11",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=FOOBAR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Joe\",\n    \"lastname\" : \"Schmoe\",\n    \"totalprice\" : 112,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2019-01-08\",\n        \"checkout\" : \"2019-01-10\"\n    },\n    \"additionalneeds\" : \"Lunch\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/1",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partial Update Booking No Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7d8fefdd-dab7-46de-91a8-64cd816ebc42",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Prunella\",\n    \"lastname\" : \"Prunewhip\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/{{bookingId}}",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"{{bookingId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partial Update Booking Invalid Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7d8fefdd-dab7-46de-91a8-64cd816ebc42",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=FOOBAR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Prunella\",\n    \"lastname\" : \"Prunewhip\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/{{bookingId}}",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"{{bookingId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Booking No Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "38ef8b52-c17c-49fc-8571-1ad12753f53f",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/1",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Booking Invalid Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "38ef8b52-c17c-49fc-8571-1ad12753f53f",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "token=FOOBAR",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/1",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Booking Invalid Checkin Month",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3cb4c562-eee6-481f-bfe7-0f2b01f8f9ee",
+						"exec": [
+							"pm.test(\"Invalid date response\", function () {",
+							"    pm.response.to.have.body(\"Invalid date\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Prunella\",\n    \"lastname\" : \"Prunewhip\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2019-13-01\",\n        \"checkout\" : \"2019-01-03\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Booking Invalid Checkin Day",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3cb4c562-eee6-481f-bfe7-0f2b01f8f9ee",
+						"exec": [
+							"pm.test(\"Invalid date response\", function () {",
+							"    pm.response.to.have.body(\"Invalid date\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Prunella\",\n    \"lastname\" : \"Prunewhip\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2019-12-32\",\n        \"checkout\" : \"2019-01-03\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Booking Invalid Checkout Month",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3cb4c562-eee6-481f-bfe7-0f2b01f8f9ee",
+						"exec": [
+							"pm.test(\"Invalid date response\", function () {",
+							"    pm.response.to.have.body(\"Invalid date\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Prunella\",\n    \"lastname\" : \"Prunewhip\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2019-07-04\",\n        \"checkout\" : \"2019-13-03\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Booking Invalid Checkout Day",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3cb4c562-eee6-481f-bfe7-0f2b01f8f9ee",
+						"exec": [
+							"pm.test(\"Invalid date response\", function () {",
+							"    pm.response.to.have.body(\"Invalid date\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\" : \"Prunella\",\n    \"lastname\" : \"Prunewhip\",\n    \"totalprice\" : 111,\n    \"depositpaid\" : true,\n    \"bookingdates\" : {\n        \"checkin\" : \"2019-07-04\",\n        \"checkout\" : \"2019-12-32\"\n    },\n    \"additionalneeds\" : \"Breakfast\"\n}"
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
